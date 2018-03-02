@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.biasi</groupId>
+	<artifactId>camel-spring</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<name>Camel Spring Boot</name>
+	<description>POC Camel with Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.10.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<camel.version>2.18.1.redhat-000021</camel.version>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<version.maven-bundle-plugin>3.2.0</version.maven-bundle-plugin>
+		<jboss.fuse.bom.version>6.3.0.redhat-310</jboss.fuse.bom.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-spring</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring-boot-starter</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spark-rest</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-bindy</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-servlet-starter</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jersey</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+	</dependencies>
+
+
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>fuse-public-repository</id>
+			<name>FuseSource Community Release Repository</name>
+			<url>https://repo.fusesource.com/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>red-hat-ga-repository</id>
+			<name>Red Hat GA Repository</name>
+			<url>https://maven.repository.redhat.com/ga</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>fuse-public-repository</id>
+			<name>FuseSource Community Release Repository</name>
+			<url>https://repo.fusesource.com/nexus/content/groups/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>red-hat-ga-repository</id>
+			<name>Red Hat GA Repository</name>
+			<url>https://maven.repository.redhat.com/ga</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-maven-plugin</artifactId>
+				<version>${camel.version}</version>
+				<configuration>
+					<fileApplicationContextUri>src/main/resources/META-INF/spring/camel-context.xml</fileApplicationContextUri>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

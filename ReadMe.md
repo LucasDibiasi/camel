@@ -1,13 +1,13 @@
 Camel Project for Spring-Boot 
 =========================================
 
-#Introduction
+Introduction
 
 	This application is a sample for understand, how you can use the framework Apache Camel
 	and start the application with Spring-Boot, also in this sample you can see a method using the cryptographi. Follow the steps bellow for know how you can use
 	this API.
 	
-#To build this project use
+To build this project use
 
     Download the package and build with command:
     	-mvn clean install
@@ -16,7 +16,7 @@ To run the project you can execute the following Maven goal
 
     	-mvn spring-boot:run
     
-#Routes for the application
+Routes for the application
 
 
     -For generate the swagger

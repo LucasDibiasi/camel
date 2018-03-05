@@ -19,11 +19,17 @@ To run the project you can execute the following Maven goal
     	-mvn spring-boot:run
  
 Then you'll see in log the Spring starting, looks like bellow:
+
   .   ____          _            __ _ _
+
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+
   '  |____| .__|_| |_|_| |_\__, | / / / /
+
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::       (v1.5.10.RELEASE)
 

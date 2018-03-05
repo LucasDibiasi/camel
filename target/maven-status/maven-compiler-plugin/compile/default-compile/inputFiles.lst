@@ -1,5 +1,5 @@
 /home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/mock/MockCliente.java
 /home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/cripto/Criptografia.java
-/home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/rota/ApplicationRun.java
-/home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/rota/Route.java
+/home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/route/Route.java
+/home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/route/ApplicationRun.java
 /home/lbiasi/workspace/runingcamel-springboot/src/main/java/com/biasi/model/Clientes.java
